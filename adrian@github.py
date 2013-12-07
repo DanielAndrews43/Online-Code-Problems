@@ -116,4 +116,30 @@ def guess():
         else:
             print 'Wrong' #First time through response
     
+def boxer(wordList, design):
+    '''
+    wordList = **list** of words to be boxed
+    design = single character to make up the box
+    '''
+    longestWord = 0
+    for i in wordList: #Size of box
+        if len(i) > longestWord:
+            longestWord = len(i)
+            
+    for i in wordList:
+        if i is wordList[0]:
+            print design*longestWord + 4*design
+        print (design + ' ' + i + ((longestWord - len(i))* ' ') + ' ' + design)
+        if i is wordList[-1]:
+            print design*longestWord + 4*design
+            
+def pigLatin(wordList):
+    '''
+    takes a list of words and pig latinizes it
+    '''
+    for i in wordList:
+        old = i[1:] + i[0] + 'ay'
+        print old + ' ',
+        
+
     
